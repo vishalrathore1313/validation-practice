@@ -1,0 +1,63 @@
+<!-- app/views/vishal1s/new.html.erb -->
+<h1>New Vishal1</h1>
+<%= form_with model: @vishal1, url: vishal1s_path do |form| %>
+  <% if @vishal1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vishal1.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @vishal1.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<% if flash[:alert] %>
+<div class="alert alert-danger">
+  <%=flash[:alert]%>
+ </div> 
+<%end%>
+
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :email_confirmation ,"confirm your email"%>
+    <%= form.text_field :email_confirmation %>
+  </div>
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= form.label :roll %>
+    <%= form.text_field :roll %>
+  </div>
+  <div class="field">
+    <%= form.label :entry1 %>
+    <%= form.text_field :entry1 %>
+  </div>
+  <div class="field">
+    <%= form.label :entry2 %>
+    <%= form.text_field :entry2 %>
+  </div>
+  <div class="field">
+    <%= form.label :terms_of_service, "I accept the Terms of Service" %>
+    <%= form.check_box :terms_of_service %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Create Vishal1" %>
+  </div>
+<% end %>
+

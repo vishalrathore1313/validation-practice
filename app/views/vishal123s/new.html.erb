@@ -1,0 +1,34 @@
+<!-- app/views/vishal123s/new.html.erb -->
+<h1>New Vishal123</h1>
+<%= form_with model: @vishal123, url: vishal123s_path do |form| %>
+  <% if @vishal123.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vishal123.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @vishal123.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :email_confirmation %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :terms_of_service, "I accept the Terms of Service" %>
+    <%= form.check_box :terms_of_service %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Create Vishal123" %>
+  </div>
+<% end %>
+
